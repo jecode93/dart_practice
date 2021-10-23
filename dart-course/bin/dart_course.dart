@@ -1,23 +1,10 @@
 void main() {
-  List<String> list1 = ['a', 'b', 'c', 'd', 'e', 'f'];
-  List<String> list2 = ['g', 'h', 'i', 'a']; // Return true
-  List<String> list3 = [
-    'g',
-    'h',
-    'i',
-    'j'
-  ]; // Return false, if we replace list2 by list3 in the parametter.
+  List<int> list1 = [1, 2, 3, 4, 5];
+  List<int> list2 = [5, 6, 7, 8, 9, 0];
 
-  print(verifyCommonItemInList(list1, list2));
+  mergeSortedList(list1, list2); // Result = [1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 0]
 }
 
-bool verifyCommonItemInList(List<String> l1, List<String> l2) {
-  for (int i = 0; i < l1.length; i++) {
-    for (int j = 0; j < l2.length; j++) {
-      if (l1[i] == l2[j]) {
-        return true;
-      }
-    }
-  }
-  return false;
+void mergeSortedList(List<int> l1, List<int> l2) {
+  print(l1 + l2);
 }
