@@ -1,10 +1,19 @@
 void main() {
-  List<int> list1 = [1, 2, 3, 4, 5];
-  List<int> list2 = [5, 6, 7, 8, 9, 0];
+  //first recurring character
 
-  mergeSortedList(list1, list2); // Result = [1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 0]
+  List<int> list1 = [5, 2, 5, 6, 2, 7, 8, 2, 3, 7, 10]; //Should return 2
+  List<int> list2 = [2, 5, 6, 7, 8, 3, 10]; //Should return nothing
+
+  print(firstRecurringCharacter(list1));
 }
 
-void mergeSortedList(List<int> l1, List<int> l2) {
-  print(l1 + l2);
+int? firstRecurringCharacter(List<int> l1) {
+  for (int i = 0; i < l1.length; i++) {
+    for (int j = i + 1; j < l1.length; j++) {
+      if (l1[i] == l1[j]) {
+        return l1[i];
+      }
+    }
+  }
+  return null;
 }
